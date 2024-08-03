@@ -1,15 +1,9 @@
 {
-<<<<<<< HEAD
-  "dependencies": {
-    "cors": "^2.8.5"
-  }
-}
-=======
-  "name": "backend",
+  "name": "calc",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -23,4 +17,3 @@
   },
   "proxy": "http://localhost:5000"
 }
->>>>>>> origin/main
