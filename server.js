@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const path = require('path');
 
 dotenv.config();
 
@@ -19,6 +20,9 @@ const corsOptions = {
 app.use(cors(corsOptions)); // Apply CORS middleware with the configured options
 
 app.use(express.json());
+
+// Serve static files from the "public" directory
+app.use(express.static('public'));
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
@@ -41,6 +45,11 @@ app.use('/api/userdata', userDataRoutes);
 // Test route
 app.get('/api/test', (req, res) => {
   res.json({ message: 'Server is working' });
+});
+
+// Catch-all route to serve the index.html file for any unknown routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(PORT, () => {
