@@ -1,0 +1,17 @@
+{
+  "name": "projection-calculator-server",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^5.13.22"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
